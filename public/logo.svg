@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240" width="560" height="240">
+  <!-- Left icon square (scaled down) -->
+  <g transform="translate(0,30) scale(0.75)">
+    <rect width="240" height="240" rx="48" fill="#0F172A"/>
+
+    <!-- Original icon inside the square -->
+    <g>
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#00C6FF"/>
+          <stop offset="100%" stop-color="#0072FF"/>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+        <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+          <feOffset dx="0" dy="2" result="off"/>
+          <feGaussianBlur in="off" stdDeviation="4" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k2="-1" k3="1"/>
+        </filter>
+      </defs>
+
+      <g transform="translate(45,60) rotate(-45,75,60)" stroke="url(#grad)" stroke-width="10"
+         stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)">
+        <path d="M50 60a30 30 0 0 1 30-30h35a30 30 0 0 1 0 60h-20" />
+        <path d="M100 60a30 30 0 0 1-30 30H35a30 30 0 0 1 0-60h20" />
+      </g>
+
+      <circle cx="120" cy="120" r="7" fill="url(#grad)" filter="url(#innerShadow)"/>
+      <circle cx="120" cy="120" r="40" stroke="url(#grad)" stroke-width="1.5"
+              fill="none" opacity="0.25" filter="url(#glow)"/>
+      <rect width="240" height="240" rx="48" fill="url(#grad)" opacity="0.08"/>
+    </g>
+  </g>
+
+  <!-- Text section, vertically centered with the smaller square -->
+  <text x="215" y="135" font-family="Poppins, Inter, sans-serif"
+        font-size="75" font-weight="600" letter-spacing="-1">
+    <tspan fill="white">Bit</tspan><tspan fill="url(#grad)">Links</tspan>
+  </text>
+
+  <text x="215" y="167" font-family="Inter, sans-serif" font-size="25"
+        fill="#94A3B8" letter-spacing="0.5">
+    Smart • Secure • Shortened
+  </text>
+</svg>

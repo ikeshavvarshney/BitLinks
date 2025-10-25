@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <!-- Brand gradient -->
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C6FF"/>
+      <stop offset="100%" stop-color="#0072FF"/>
+    </linearGradient>
+
+    <!-- Soft glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Inner shadow for depth -->
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset dx="0" dy="2" result="off"/>
+      <feGaussianBlur in="off" stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k2="-1" k3="1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="240" height="240" rx="48" fill="#0F172A"/>
+
+  <!-- Rotated stylized chain -->
+  <g transform="translate(45,60) rotate(-45,75,60)" stroke="url(#grad)" stroke-width="10"
+     stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)">
+    <!-- left link -->
+    <path d="M50 60a30 30 0 0 1 30-30h35a30 30 0 0 1 0 60h-20" />
+    <!-- right link -->
+    <path d="M100 60a30 30 0 0 1-30 30H35a30 30 0 0 1 0-60h20" />
+  </g>
+
+  <!-- Center connector dot -->
+  <circle cx="120" cy="120" r="7" fill="url(#grad)" filter="url(#innerShadow)"/>
+
+  <!-- Accent glow ring -->
+  <circle cx="120" cy="120" r="40" stroke="url(#grad)" stroke-width="1.5"
+          fill="none" opacity="0.25" filter="url(#glow)"/>
+
+  <!-- Subtle gradient overlay for visual polish -->
+  <rect width="240" height="240" rx="48" fill="url(#grad)" opacity="0.08"/>
+</svg>
