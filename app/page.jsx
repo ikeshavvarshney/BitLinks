@@ -6,7 +6,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center lg:justify-between py-20">
-        
+
         {/* Left: Text */}
         <div className="lg:w-1/2 text-center lg:text-left space-y-6">
           <h1 className="text-4xl sm:text-5xl font-bold text-white">Bitlinks</h1>
@@ -62,9 +62,11 @@ export default function Home() {
           {/* Feature Card 3 */}
           <div className="bg-slate-700 rounded-xl p-6 text-center hover:scale-105 transition transform shadow-lg">
             <div className="text-cyan-400 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 11v2c0 2.21 1.79 4 4 4s4-1.79 4-4v-2" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto h-12 w-12 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                {/* Left chain segment */}
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" />
+                {/* Right chain segment */}
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" />
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-2">Secure Links</h3>
